@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RadiomanTest {
-    RadioMan rad = new RadioMan();
+    RadioMan rad = new RadioMan( 1, 0, 9, 0, 100);
     @Test
     void ShouldRadio1() {
 

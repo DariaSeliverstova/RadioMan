@@ -1,11 +1,7 @@
 package ru.netology;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
-@AllArgsConstructor
+
 
 public class RadioMan {
     private int id;
@@ -17,7 +13,17 @@ public class RadioMan {
     private int maxVolume = 100;
 
 
+    public RadioMan(int id, int minRadio, int maxRadio, int minVolume, int maxVolume) {
+        this.id = id;
+        this.minRadio = minRadio;
+        this.maxRadio = maxRadio;
+        this.minVolume = minVolume;
+        this.maxVolume = maxVolume;
+    }
 
+    public RadioMan() {
+
+    }
 
     public void setCurrentRadio(int newRadio) {
 
