@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RadiomanTest {
-    RadioMan rad = new RadioMan();
+    RadioMan rad = new RadioMan( 10);
     @Test
     void ShouldRadio1() {
 
@@ -20,7 +20,7 @@ public class RadiomanTest {
     @Test
     void ShouldRadio2() {
 
-        rad.setCurrentRadio(10);
+        rad.setCurrentRadio(11);
 
         int expected = 0;
         int actual = rad.getCurrentRadio();
@@ -33,7 +33,7 @@ public class RadiomanTest {
     @Test
     void ShouldNextStation1() {
 
-        rad.setCurrentRadio(9);
+        rad.setCurrentRadio(10);
 
         rad.nextStation();
         int expected = 0;
@@ -59,10 +59,10 @@ public class RadiomanTest {
     @Test
     void ShouldBeforeStation1() {
 
-        rad.setCurrentRadio(-1);
+        rad.setCurrentRadio(0);
 
         rad.beforeStation();
-        int expected = 9;
+        int expected = 10;
         int actual = rad.getCurrentRadio();
 
         assertEquals(expected, actual);
