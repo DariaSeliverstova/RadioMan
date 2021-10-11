@@ -1,12 +1,5 @@
 package ru.netology;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@NoArgsConstructor
-@AllArgsConstructor
-
 public class RadioMan {
     private int id;
     private int currentRadio;
@@ -15,52 +8,45 @@ public class RadioMan {
     private int maxRadio = 9;
     private int minVolume = 0;
     private int maxVolume = 100;
+    private int numberOfstaion = 10;
 
 
-
-
+    public RadioMan(int maxRadio) {
+        this.maxRadio = maxRadio;
+    }
+    public RadioMan() {
+    }
     public void setCurrentRadio(int newRadio) {
-
         if (newRadio < minRadio) {
             return;
         }
-        if (newRadio > maxRadio) {
+        if (newRadio > numberOfstaion) {
             return;
         }
         currentRadio = newRadio;
-
     }
-
     public void nextStation() {
-
         int nextStation = currentRadio + 1;
-
-
-        if (nextStation > maxRadio) {
+        if (nextStation > numberOfstaion) {
             currentRadio = minRadio;
         } else {
             currentRadio = nextStation - 1;
         }
-
     }
-
     public void beforeStation() {
-
         int beforeStation = currentRadio;
         int r = currentRadio - 1;
         if (r < minRadio) {
-            currentRadio = maxRadio;
+            currentRadio = numberOfstaion;
         } else {
             currentRadio = beforeStation;
         }
     }
-
     public int getCurrentRadio() {
         return currentRadio;
+
     }
-
     public void setCurrentVolume(int newVolume) {
-
         if (newVolume < minVolume) {
             return;
         }
@@ -68,24 +54,17 @@ public class RadioMan {
             return;
         }
         currentVolume = newVolume;
-
     }
-
     public void nextVolume() {
-
         int nextVolume = currentVolume + 1;
         int v = currentVolume + 1;
-
         if (v > maxVolume) {
             currentVolume = maxVolume;
         } else {
             currentVolume = nextVolume - 1;
         }
-
     }
-
     public void beforeVolume() {
-
         int beforeVolume = currentVolume - 1;
         int v = currentVolume - 1;
         if (v < minVolume) {
@@ -94,12 +73,9 @@ public class RadioMan {
             currentVolume = beforeVolume + 1;
         }
     }
-
-
     public int getCurrentVolume() {
         return currentVolume;
     }
-
 }
 
 
